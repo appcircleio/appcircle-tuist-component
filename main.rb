@@ -22,7 +22,7 @@ def runCommand(command)
       raise stderr_str
     end
 end
-runCommand("curl -Ls https://install.tuist.io | bash")
+runCommand("brew tap tuist/tuist && brew install tuist")
 options = ""
 tuist_path = env_has_key("AC_TUIST_PATH")
 project_only = env_has_key("AC_TUIST_PROJECT_ONLY") || "false"

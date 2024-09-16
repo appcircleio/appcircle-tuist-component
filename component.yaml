@@ -8,6 +8,31 @@ inputs:
   isRequired: false
   title: Project Path
   description: The path to the directory that contains the definition of the project. Defaults to current directory.
+- key: "AC_TUIST_VERSION"
+  defaultValue: "$AC_TUIST_VERSION"
+  isRequired: false
+  title: Tuist Version
+  description: The version of Tuist, you can specify a specific Tuist version. If it is empty, Appcircle will install the latest version of Tuist.
+- key: "AC_TUIST_BUILD"
+  defaultValue: "false"
+  isRequired: false
+  title: Build Project
+  description: Build your project via `tuist build` command
+- key: "AC_TUIST_TEST"
+  defaultValue: "false"
+  isRequired: false
+  title: Run Your Test
+  description: Run your Tests in your project via `tuist test` command
+- key: "AC_TUIST_FETCH"
+  defaultValue: "false"
+  isRequired: false
+  title: Fetch Project Dependencies
+  description: Fetch all project dependencies via `tuist fetch` command before generate or build commands.
+- key: "AC_TUIST_CLEAN"
+  defaultValue: "false"
+  isRequired: false
+  title: Clean All Project Files
+  description: Before build command, it will clean all previous build files via `tuist clean` command.
 - key: "AC_TUIST_PROJECT_ONLY"
   defaultValue: "false"
   isRequired: false

@@ -9,7 +9,6 @@ inputs:
   title: Project Path
   description: The path to the directory that contains the definition of the project. Defaults to current directory.
 - key: "AC_TUIST_VERSION"
-  defaultValue: "$AC_TUIST_VERSION"
   isRequired: false
   title: Tuist Version
   description: The version of Tuist, you can specify a specific Tuist version. If it is empty, Appcircle will install the latest version of Tuist.

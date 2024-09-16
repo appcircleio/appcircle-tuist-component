@@ -24,7 +24,7 @@ def runCommand(command)
     end
 end
 
-runCommand("brew install tap/tuist")
+runCommand("brew tap tuist/tuist")
 options = ""
 tuist_path = env_has_key("AC_TUIST_PATH")
 project_only = env_has_key("AC_TUIST_PROJECT_ONLY") || "false"

@@ -50,8 +50,8 @@ end
 
 puts "Tuist Installed. Running related Tuist commands."
 
-runCommand("tuist fetch #{options}") if tuist_fetch "true"
-runCommand("tuist generate #{options}") "true"
-runCommand("tuist clean #{options}") if tuist_clean "true"
-runCommand("tuist build #{options}") if tuist_build "true"
-runCommand("tuist test #{options}") if tuist_test "true"
+runCommand("tuist fetch #{options}") if tuist_fetch == "true"
+runCommand("tuist generate #{options}")
+runCommand("tuist clean #{options}") if tuist_clean == "true"
+runCommand("tuist build #{options}") if tuist_build == "true"
+runCommand("tuist test #{options}") if tuist_test == "true"

@@ -31,7 +31,6 @@ project_only = env_has_key("AC_TUIST_PROJECT_ONLY") || "false"
 tuist_version = env_has_key("AC_TUIST_VERSION")
 tuist_build = env_has_key("AC_TUIST_BUILD") || "false"
 tuist_test = env_has_key("AC_TUIST_TEST") || "false"
-tuist_fetch = env_has_key("AC_TUIST_FETCH") || "false"
 tuist_clean = env_has_key("AC_TUIST_CLEAN") || "false"
 
 
@@ -50,7 +49,6 @@ end
 
 puts "Tuist Installed. Running related Tuist commands."
 
-runCommand("tuist fetch #{options}") if tuist_fetch == "true"
 runCommand("tuist generate #{options}")
 runCommand("tuist clean #{options}") if tuist_clean == "true"
 runCommand("tuist build #{options}") if tuist_build == "true"

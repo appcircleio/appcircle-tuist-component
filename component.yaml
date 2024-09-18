@@ -22,11 +22,6 @@ inputs:
   isRequired: false
   title: Run Your Test
   description: Run your Tests in your project via `tuist test` command
-- key: "AC_TUIST_FETCH"
-  defaultValue: "false"
-  isRequired: false
-  title: Fetch Project Dependencies
-  description: Fetch all project dependencies via `tuist fetch` command before generate or build commands.
 - key: "AC_TUIST_CLEAN"
   defaultValue: "false"
   isRequired: false

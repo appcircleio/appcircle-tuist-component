@@ -36,7 +36,7 @@ else
 end
 
 if tuist_path
-  options += "#{tuist_path}"
+  options += "-p #{tuist_path}"
 end
 
 runCommand("tuist generate #{options}")

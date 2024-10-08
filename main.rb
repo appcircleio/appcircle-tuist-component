@@ -29,10 +29,6 @@ options = ""
 tuist_path = env_has_key("AC_TUIST_PATH")
 project_only = env_has_key("AC_TUIST_PROJECT_ONLY") || "false"
 tuist_version = env_has_key("AC_TUIST_VERSION")
-tuist_build = env_has_key("AC_TUIST_BUILD") || "false"
-tuist_test = env_has_key("AC_TUIST_TEST") || "false"
-tuist_clean = env_has_key("AC_TUIST_CLEAN") || "false"
-
 
 if !tuist_version
   runCommand("brew install tuist")
@@ -41,15 +37,7 @@ else
 end
 
 if tuist_path
-  options += " -p #{tuist_path}"
+  options += "#{tuist_path}"
 end
-if project_only == "true"
-  options += " -P"
-end
-
-puts "Tuist Installed. Running related Tuist commands."
 
 runCommand("tuist generate #{options}")
-runCommand("tuist clean #{options}") if tuist_clean == "true"
-runCommand("tuist build #{options}") if tuist_build == "true"
-runCommand("tuist test #{options}") if tuist_test == "true"

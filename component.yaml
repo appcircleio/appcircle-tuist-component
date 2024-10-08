@@ -12,26 +12,6 @@ inputs:
   isRequired: false
   title: Tuist Version
   description: The version of Tuist, you can specify a specific Tuist version. If it is empty, Appcircle will install the latest version of Tuist.
-- key: "AC_TUIST_BUILD"
-  defaultValue: "false"
-  isRequired: false
-  title: Build Project
-  description: Build your project via `tuist build` command
-- key: "AC_TUIST_TEST"
-  defaultValue: "false"
-  isRequired: false
-  title: Run Your Test
-  description: Run your Tests in your project via `tuist test` command
-- key: "AC_TUIST_CLEAN"
-  defaultValue: "false"
-  isRequired: false
-  title: Clean All Project Files
-  description: Before build command, it will clean all previous build files via `tuist clean` command.
-- key: "AC_TUIST_PROJECT_ONLY"
-  defaultValue: "false"
-  isRequired: false
-  title: Generate project only
-  description: Only generate the local project (without generating its dependencies).
 processFilename: ruby
 processArguments: '%AC_STEP_TEMP%/main.rb'
 files:

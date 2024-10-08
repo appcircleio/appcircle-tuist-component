@@ -27,7 +27,6 @@ end
 runCommand("brew tap tuist/tuist")
 options = ""
 tuist_path = env_has_key("AC_TUIST_PATH")
-project_only = env_has_key("AC_TUIST_PROJECT_ONLY") || "false"
 tuist_version = env_has_key("AC_TUIST_VERSION")
 
 if !tuist_version

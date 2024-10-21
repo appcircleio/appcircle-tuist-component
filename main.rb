@@ -1,5 +1,4 @@
 require 'open3'
-require 'fileutils'
 
 def env_has_key(key)
 	return (ENV[key] == nil || ENV[key] == "") ? nil : ENV[key]
@@ -25,18 +24,14 @@ def runCommand(command)
 end
 
 runCommand("brew tap tuist/tuist")
-options = ""
-tuist_path = env_has_key("AC_TUIST_PATH")
+tuist_path = env_has_key("AC_TUIST_PATH") || abort("Missing AC_TUIST_PATH")
 tuist_version = env_has_key("AC_TUIST_VERSION")
+spec_version = ""
 
-if !tuist_version
-  runCommand("brew install tuist")
-else
-  runCommand("brew install tuist@#{tuist_version}")
+if tuist_version
+  spec_version = "@#{tuist_version}"
 end
+  
+runCommand("brew install tuist#{spec_version}")
 
-if tuist_path
-  options += "-p #{tuist_path}"
-end
-
-runCommand("tuist generate #{options}")
+runCommand("tuist generate -p #{tuist_path}")

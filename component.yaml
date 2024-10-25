@@ -1,6 +1,6 @@
 platform: iOS
-buildPlatform:
-displayName: Tuist
+buildPlatform: ObjectiveCSwift
+displayName: Tuist Install
 description: "Install Tuist and Generate a Project."
 inputs:
 - key: "AC_TUIST_PATH"

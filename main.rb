@@ -22,14 +22,16 @@ def runCommand(command)
       raise stderr_str
     end
 end
-runCommand("brew tap tuist/tuist && brew install tuist")
-options = ""
-tuist_path = env_has_key("AC_TUIST_PATH")
-project_only = env_has_key("AC_TUIST_PROJECT_ONLY") || "false"
-if tuist_path
-  options += " -p #{tuist_path}"
+
+runCommand("brew tap tuist/tuist")
+tuist_path = env_has_key("AC_TUIST_PATH") || abort("Missing AC_TUIST_PATH")
+tuist_version = env_has_key("AC_TUIST_VERSION")
+spec_version = ""
+
+if tuist_version
+  spec_version = "@#{tuist_version}"
 end
-if project_only == "true"
-  options += " -P"
-end
-runCommand("tuist generate #{options}")
+  
+runCommand("brew install tuist#{spec_version}")
+
+runCommand("tuist generate -p #{tuist_path}")

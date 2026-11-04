@@ -11,7 +11,11 @@ inputs:
 - key: "AC_TUIST_VERSION"
   isRequired: false
   title: Tuist Version
-  description: The version of Tuist, you can specify a specific Tuist version. If it is empty, Appcircle will install the latest version of Tuist.
+  description: The version of Tuist, you can specify a specific Tuist version. If it is empty, Appcircle installs Tuist 4.214.0. The step skips the download when this version is already on PATH.
+- key: "AC_TUIST_BASE_URL"
+  isRequired: false
+  title: Tuist Download Base URL
+  description: "Base URL of the Tuist release downloads. Defaults to: https://github.com/tuist/tuist/releases/download. Set it to an internal mirror to install Tuist without internet access."
 processFilename: ruby
 processArguments: '%AC_STEP_TEMP%/main.rb'
 files:

@@ -27,6 +27,8 @@ def runCommand(command)
     end
 end
 
+if __FILE__ == $PROGRAM_NAME
+
 tuist_path = env_has_key("AC_TUIST_PATH") || abort("Missing AC_TUIST_PATH")
 # Used when AC_TUIST_VERSION is empty: the version that `brew install tuist` installed when this was pinned.
 tuist_version = env_has_key("AC_TUIST_VERSION") || DEFAULT_TUIST_VERSION
@@ -69,3 +71,5 @@ if env_file_path
 end
 
 runCommand("tuist generate -p #{tuist_path}")
+
+end # if __FILE__ == $PROGRAM_NAME

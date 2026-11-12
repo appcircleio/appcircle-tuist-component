@@ -10,3 +10,13 @@ This step installs [Tuist](https://tuist.io/) and runs `tuist generate` with giv
 - `$AC_TUIST_BASE_URL`: Base URL of the Tuist release downloads. Defaults to `https://github.com/tuist/tuist/releases/download`. The step downloads `<base>/<version>/tuist.zip` and verifies it against `<base>/<version>/SHASUMS256.txt`. Set it to an internal mirror to install Tuist without internet access.
 
 The step does not use Homebrew. It skips the download when `tuist version` already reports the requested version, and it sets `TUIST_STATS_OPT_OUT=1`.
+
+## Running tests
+
+Requires [RSpec](https://rspec.info) gem and Ruby standard library (Coverage). No Gemfile or Bundler needed.
+
+```bash
+ruby test/test_main.rb
+```
+
+A coverage report is printed at the end of each run.
